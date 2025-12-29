@@ -1,8 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit';
+import authReducer from './slices/auth.slice';
 
-// Thêm các slices khác vào đây
 const rootReducer = combineReducers({
-  // Ví dụ: settings: settingsReducer,
+  auth: authReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

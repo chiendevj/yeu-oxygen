@@ -7,7 +7,7 @@ interface BaseActionButtonProps {
   onPress: () => void;
   mainText: string;
   bgColorClass?: string;
-  mainIconName: ComponentProps<typeof AntDesign>["name"];
+  mainIconName?: ComponentProps<typeof AntDesign>["name"];
   secondaryIconName: ComponentProps<typeof Feather>["name"];
   mainIconColor?: string;
   secondaryIconColor?: string;

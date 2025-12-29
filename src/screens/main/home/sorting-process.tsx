@@ -85,7 +85,7 @@ const SortingProcessScreen: React.FC<Props> = ({ navigation }) => {
                 return (
                   <Ionicons
                     key={idx}
-                    name={icon}
+                    name={icon as any}
                     size={size}
                     color="rgba(255,255,255,0.2)"
                   />

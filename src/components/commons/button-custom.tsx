@@ -22,12 +22,15 @@ const ButtonCustom: React.FC<IButtonCustomProps> = ({
   onPress,
   buttonClassName = '',
   textClassName = '',
-  textAlignment = 'center', 
+  textAlignment = 'center',
+  disabled = false,
   style,
   ...rest
 }) => {
   
-  const defaultButtonClass = "bg-[#006837] p-4 rounded-xl shadow-lg mb-6";
+  const defaultButtonClass = disabled 
+    ? "bg-gray-400 p-4 rounded-xl shadow-lg mb-6"
+    : "bg-[#006837] p-4 rounded-xl shadow-lg mb-6";
   
   const defaultTextClass = "text-white font-semibold text-lg";
 
@@ -40,7 +43,9 @@ const ButtonCustom: React.FC<IButtonCustomProps> = ({
     <TouchableOpacity
       className={`${defaultButtonClass} ${textAlignment === 'center' ? 'items-center' : ''} ${buttonClassName}`}
       onPress={onPress}
+      disabled={disabled}
       style={style}
+      activeOpacity={disabled ? 1 : 0.7}
       {...rest}
     >
       <Text className={`${defaultTextClass} ${textClassName}`} style={textStyle}>{title}</Text>

@@ -4,8 +4,12 @@ export type HomeStackParamList = {
   HomeMain: undefined;
   SortingProcess: undefined;
   CollectionHistory: undefined;
+  OrderDetail: {
+    orderId: string;
+  };
   Point: undefined;
   RedeemGifts: undefined;
+  MyGifts: undefined;
   AutomaticWaste: undefined;
   SortDetail: { 
     slug: string; 
@@ -13,11 +17,17 @@ export type HomeStackParamList = {
   };
 };
 
+export type ProfileStackParamList = {
+  ProfileMain: undefined;
+  ProfileDetail: undefined;
+  MyGifts: undefined;
+};
+
 export type AppTabParamList = {
   Home: NavigatorScreenParams<HomeStackParamList>; 
   Order: undefined;
   Map: undefined;
-  Profile: undefined;
+  Profile: NavigatorScreenParams<ProfileStackParamList>;
 };
 
 export type AuthStackParamList = {
